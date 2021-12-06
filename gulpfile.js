@@ -6,7 +6,23 @@ const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
-const notify = require("gulp-notify");
+const notify = require('gulp-notify');
+const del = require('del');
+const importCss = require('gulp-import-css');
+
+const clean = () => {
+  return del(['dist']);
+};
+
+const choicesJS = () => {
+  return src('./node_modules/choices.js/public/assets/scripts/choices.min.js')
+    .pipe(dest('./dist/public/js'));
+};
+
+const choicesCSS = () => {
+  return src('./node_modules/choices.js/public/assets/styles/choices.min.css')
+    .pipe(dest('./dist/styles/'));
+};
 
 const css = () => {
   return src('./src/styles/**/*.scss')
@@ -14,16 +30,13 @@ const css = () => {
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(sourcemaps.write())
+  .pipe(importCss())
   .pipe(dest('./dist/styles/'))
   .pipe(browserSync.stream());
 };
 
 const scripts = () => {
-  return src([
-    // './src/vendor/swiper.js',
-    // './node_modules/choices.js/public/assets/scripts/choices.js',  // пробовал установить и достать отсюда не получается
-    'src/*.js'
-  ])
+  return src('src/*.js')
     .pipe(concat('index.js'))
     .pipe(sourcemaps.init())
     .pipe(babel({
@@ -54,9 +67,9 @@ const resources = () => {
     .pipe(dest('./dist/public'))
 };
 
-
 watch('./src/styles/*.scss', { events: 'all' }, css);
 watch('./src/public', { events: 'all' }, resources);
 watch('./src/*.html', { events: 'all' }, html);
+watch('./src/**/*.js', { events: 'all' }, scripts);
 
-exports.default = series(resources, css, html, scripts, watchFiles);
+exports.default = series(clean, resources, css, html, choicesJS, choicesCSS, scripts, watchFiles);

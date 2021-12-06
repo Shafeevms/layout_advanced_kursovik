@@ -1,10 +1,9 @@
 const citySelect = document.querySelector('.company__select');
-console.log(new Choises)
 
 const choices = new Choices(citySelect, {
   silent: false,
-  items: [],
-  choices: [],
+  // items: ['омск','новосиб'],s
+  // choices: ['омск','новосиб'],
   renderChoiceLimit: -1,
   maxItemCount: -1,
   addItems: true,
