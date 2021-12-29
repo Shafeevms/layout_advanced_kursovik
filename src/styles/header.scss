@@ -3,7 +3,8 @@
   // padding-bottom: 32px;
   display: grid;
   grid-template-rows: 50px 91px 92px;
-  grid-template-columns: repeat (12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0 32px;
   align-items: center;
 
   &__chooseCity {
@@ -17,6 +18,7 @@
 
   &__choiserText {
     margin-right: 10px;
+    width: 174px;
   }
 
   &__select {
@@ -39,7 +41,7 @@
 
   &__navigation1 {
     grid-area: nav1;
-    grid-column: 6 / 12;
+    grid-column: 6 / 13;
     grid-row: 1 / 2;
 
   }
@@ -61,7 +63,7 @@
   &__navigation2 {
     grid-area: nav2;
     grid-row: 2 / 3;
-    grid-column: 4 / 12;
+    grid-column: 4 / 13;
   }
 
   &__list2 {
@@ -74,10 +76,6 @@
     grid-area: form;
     grid-column: 1 / 8;
     grid-row: 3 / 4;
-    outline: 1px solid red;
-  }
-
-  &__input {
   }
 
   &__categSelect {
@@ -104,8 +102,7 @@
 }
 .input {
   padding: 20px 59px;
-  max-width: 761px;
-  width: 100%;
+  width: 765px;
   border: none;
   border-radius: 10px 0px 0px 10px;
   background-color: $gray-light;
@@ -124,7 +121,7 @@
     position: absolute;
     display: block;
     top: 20%;
-    right: 25%;
+    right: 0;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -150,14 +147,11 @@
   &__cartSvg {
   }
 }
+
 .choices {
   width: 140px;
   height: 20px;
 }
-// .categoryChoices {
-//   width: 300px;
-//   height: 60px;
-// }
 
 .choices__inner {
   padding: 0;
@@ -188,11 +182,28 @@
   content: url('../../public/img/header/choose_arrow.svg');
   border: none;
   top: 5%;
-  left: 50%;
+  left: 80%;
 }
 
 .choices[data-type*=select-one].is-open:after {
   transform: rotate(180deg);
-  top: 100%;
-  left: 60%;
+  top: 110%;
+  left: 97%;
+}
+
+.choices-category {
+  grid-area: category;
+  grid-column: 8 / 11;
+  grid-row: 3 / 4;
+  max-width: 300px;
+  height: 60px;
+  width: 100%;
+}
+
+.choices__inner-category {
+  margin-bottom: 15px;
+  padding: 15px;
+  height: 58px;
+  border: 2px solid #F7F7F7;
+  transform: translateY(12px);
 }
