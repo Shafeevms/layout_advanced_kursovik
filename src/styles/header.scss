@@ -46,7 +46,7 @@
     padding-top: 2px;
     display: flex;
     width: fit-content;
-    // outline: none;
+    transition: all .3s ease;
     &:hover {
       color: $orange-light;
     }
@@ -122,6 +122,18 @@
   &__link {
     font-size: inherit;
     color: inherit;
+    transition: all .3s ease;
+    &:focus {
+      background-color: $violet-focus;
+      outline: none;
+    }
+    &:hover {
+      color: $violet;
+    }
+    &:active {
+      color: $violet-active;
+      background-color: transparent;
+    }
   }
 }
 .list2 {
@@ -129,6 +141,18 @@
   &__link {
     font-size: inherit;
     color: inherit;
+    transition: all .3s ease;
+    &:focus {
+      background-color: $violet-focus;
+      outline: none;
+    }
+    &:hover {
+      color: $violet;
+    }
+    &:active {
+      color: $violet-active;
+      background-color: transparent;
+    }
   }
 }
 .input {
@@ -137,6 +161,7 @@
   border: 2px solid $gray-light;
   border-radius: 10px 0px 0px 10px;
   background-color: $gray-light;
+  transition: all .3s ease;
   &::-webkit-input-placeholder {color: $gray;}
   &::-moz-placeholder {color: $gray;}
   &::-moz-placeholder {color: $gray;}
@@ -177,6 +202,7 @@
   &__user {
     margin-right: 32px;
     color: $violet;
+    transition: all .3s ease;
     &:focus {
       background-color: $violet-hover;
     }
@@ -197,6 +223,7 @@
     color: $violet;
     display: flex;
     align-items: center;
+    transition: all .3s ease;
     &:focus {
       background-color: $violet-hover;
     }
@@ -229,6 +256,7 @@
 .choices {
   width: 140px;
   height: 20px;
+  transition: all .3s ease;
   &:focus {
     background-color: $violet-focus;
   }
@@ -257,7 +285,6 @@
 
 .choices__item {
   font-size: 16px;
-  // color: inherit;
 }
 
 .choices__item--choice {
@@ -296,7 +323,7 @@
   max-width: 300px;
   height: 51px;
   width: 100%;
-
+  transition: all .3s ease;
   &:focus .choices__inner-category {
     background-color: $violet-focus;
     border-color: $violet;
@@ -304,7 +331,6 @@
   &:hover :after{
     color: $violet-hover;
   }
-
   &:active .choices__inner-category {
     color: $violet-active;
     background-color: transparent;
@@ -316,7 +342,7 @@
   height: 58px;
   border: 2px solid #F7F7F7;
   border-radius: 0px 10px 10px 0px;
-
+  transition: all .3s ease;
   &:hover {
     border-color: $violet;
   }
