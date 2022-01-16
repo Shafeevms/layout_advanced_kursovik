@@ -16,7 +16,7 @@ const categoryChoises = new Choices(categorySelect, {
     containerOuter: 'choices choices-category',
     containerInner: 'choices__inner choices__inner-category',
     input: 'choices__input',
-    inputCloned: 'choices__input--cloned asd',
+    inputCloned: 'choices__input--cloned',
   }
 });
 
