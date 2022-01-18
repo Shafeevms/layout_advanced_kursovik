@@ -11,9 +11,9 @@
 .header {
   position: relative;
   display: grid;
-  grid-template-rows: 50px 91px 92px;
+  grid-template-rows: 50px 91px 58px;
   grid-template-columns: repeat(12, 1fr);
-  gap: 0 32px;
+  // gap: 0 32px;
   align-items: center;
   z-index: 10;
 
@@ -27,8 +27,7 @@
   }
 
   &__choiserText {
-    margin-right: 10px;
-    width: 174px;
+    width: 128px;
   }
 
   &__select {
@@ -43,10 +42,11 @@
   }
 
   &__telwrapper {
-    padding-top: 2px;
     display: flex;
-    width: fit-content;
+    // width: fit-content;
+    transform: translateX(-5px);
     transition: all .3s ease;
+    font-size: 14px;
     &:hover {
       color: $orange-light;
     }
@@ -73,6 +73,7 @@
   }
 
   &__list1 {
+    padding-left: 37px;
     display: flex;
     justify-content: space-between;
 
@@ -93,6 +94,7 @@
   }
 
   &__list2 {
+    padding-left: 8px;
     display: flex;
     justify-content: space-between;
   }
@@ -305,8 +307,8 @@
 .choices[data-type*=select-one]:after {
   content: url('../../public/img/header/choose_arrow.svg');
   border: none;
-  top: 5%;
-  left: 80%;
+  top: 16%;
+  left: 57%;
 }
 
 .choices[data-type*=select-one].is-open:after {
