@@ -1,5 +1,5 @@
 const citySelect = document.querySelector('.header__select');
-const categorySelect = document.querySelector('.header__categSelect');
+const categorySelect = document.querySelector('.header__categselect');
 
 const cityChoices = new Choices(citySelect, {
   searchEnabled: false,
