@@ -1,5 +1,7 @@
 const citySelect = document.querySelector('.header__select');
 const categorySelect = document.querySelector('.header__categselect');
+const burgerOpenBtn = document.querySelector('.header__burger-open');
+const burger = document.querySelector('.burger');
 
 const cityChoices = new Choices(citySelect, {
   searchEnabled: false,
@@ -20,4 +22,14 @@ const categoryChoises = new Choices(categorySelect, {
   }
 });
 
+burgerOpenBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  burger.classList.add('is-open');
+});
 
+document.body.addEventListener('click', (e) => {
+  const target = e.target;
+  if (target.classList.contains('burger__close')) {
+    burger.classList.remove('is-open');
+  }
+});

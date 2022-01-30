@@ -14,10 +14,41 @@
 
 <body>
   <div class="header__strip"></div>
+  <div class="header__strip-small1"></div>
+  <div class="header__strip-small2"></div>
+  <div class="header__burgermenu burger">
+    <div class="burger__container">
+      <button class="burger__close">
+        <svg class="burger__svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <rect x="4.5752" y="2.9541" width="24" height="3" rx="1.5" transform="rotate(45 4.5752 2.9541)"
+            fill="#A65CF0" />
+          <rect x="21.5459" y="5.0752" width="24" height="3" rx="1.5" transform="rotate(135 21.5459 5.0752)"
+            fill="#A65CF0" />
+        </svg>
+      </button>
+      <ul class="burger__menu">
+        <li class="burger__item"><a href="#" class="burger__link">Каталог</a></li>
+        <li class="burger__item"><a href="#" class="burger__link">Магазины</a></li>
+        <li class="burger__item"><a href="#" class="burger__link">Шоу-рум</a></li>
+        <li class="burger__item"><a href="#" class="burger__link">Доставка и оплата</a></li>
+        <li class="burger__item"><a href="#" class="burger__link">Дисконт</a></li>
+        <li class="burger__item"><a href="#" class="burger__link">Контакты</a></li>
+      </ul>
+    </div>
+    <nav class="burger__nav">
+      <ul class="burger__navlist">
+        <li class="burger__navitem"><a href="#" class="burger__navlink">О компании</a></li>
+        <li class="burger__navitem"><a href="#" class="burger__navlink">Корпоративным клиентам</a></li>
+        <li class="burger__navitem"><a href="#" class="burger__navlink">Гарантия и возврат</a></li>
+        <li class="burger__navitem"><a href="#" class="burger__navlink">Дизайн-решение</a></li>
+      </ul>
+    </nav>
+  </div>
   <header class="header container">
-    <a href="#" class="header__burger">
+    <button href="#" class="header__burger-open">
       <img src="./public/img/header/burger.png" alt="#">
-    </a>
+    </button>
     <div class="header__choosecity">
       <span class="header__choisertext">Ваш регион:</span>
       <select class="header__select">
